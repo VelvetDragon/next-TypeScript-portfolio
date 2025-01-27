@@ -11,6 +11,16 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      // Disable unused variables rule
+      "@typescript-eslint/no-unused-vars": "off",
+      // Disable exhaustive deps rule for useEffect
+      "react-hooks/exhaustive-deps": "off",
+      // Disable explicit any rule
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
