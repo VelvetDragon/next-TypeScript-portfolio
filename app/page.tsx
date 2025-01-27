@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
-
-import { FaHome } from "react-icons/fa";
 import RecentProjects from "@/components/RecentProjects";
-import { navItems } from "@/data";
 import Footer from "@/components/Footer";
+
 
 export default function Home() {
   return (
@@ -17,5 +15,6 @@ export default function Home() {
         <Footer/>
       </div>
     </main>
+
   );
 }

@@ -1,10 +1,11 @@
 import { gridItems } from "@/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 
 const Grid = () => {
   return (
-    <section id="about">  
+    <section id="about">
       <BentoGrid className="w-full py-20">
         {gridItems.map((item, i) => (
           <BentoGridItem

@@ -1,10 +1,59 @@
-import { FaLocationArrow } from "react-icons/fa6";
+"use client"
+
+import { IoCopyOutline } from "react-icons/io5";
 import { socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
-
+import { TypewriterEffect } from "./ui/typewriter-effect";
+import Lottie from "react-lottie";
+import { useState } from "react";
+import animationData from "@/data/confetti.json";
 
 
 const Footer = () => {
+
+    const [copied, setCopied] = useState(false);
+
+    const defaultOptions = {
+        loop: copied,
+        autoplay: copied,
+        animationData: animationData,
+        rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+        },
+    };
+
+    const handleCopy = () => {
+        const text = "aryalsuwan.2003@gmail.com";
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+    };
+
+    const words = [
+        {
+            text: "Let's",
+            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
+        },
+        {
+            text: "turn",
+            className: "text-center  text-[10px] md:text-3xl lg:text-5xl",
+        },
+        {
+            text: "your",
+            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
+        },
+        {
+            text: "data",
+            className: "text-center text-purple text-[10px] md:text-3xl lg:text-5xl",
+        },
+        {
+            text: "into",
+            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
+        },
+        {
+            text: "action",
+            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
+        },
+    ];
     return (
         <footer className="w-full pt-20 pb-10 relative" >
             {/* background grid */}
@@ -18,16 +67,29 @@ const Footer = () => {
 
             {/* Content */}
             <div className="flex flex-col items-center">
-                <h1 className="heading lg:max-w-[45vw]">
-                    Let&apos;s turn your <span className="text-purple">data</span> into action.
-                </h1>
-                <a href="mailto:aryalsuwan.2003@gmail.com">
+                <TypewriterEffect words={words} />
+
+                <div className="mt-5 relative">
+                    {/* button border magic from tailwind css buttons  */}
+                    {/* add rounded-md h-8 md:h-8, remove rounded-full */}
+                    {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
+                    {/* add handleCopy() for the copy the text */}
+                    <div
+                        className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
+                            }`}
+                    >
+                        {/* <img src="/confetti.gif" alt="confetti" /> */}
+                        <Lottie options={defaultOptions} height={200} width={400} />
+                    </div>
+
                     <MagicButton
-                        title="Get in touch"
-                        icon={<FaLocationArrow />}
-                        position="right"
+                        title={copied ? "Email is Copied!" : "Copy my email address"}
+                        icon={<IoCopyOutline />}
+                        position="left"
+                        handleClick={handleCopy}
+                        otherClasses="!bg-[#161A31]"
                     />
-                </a>
+                </div>
 
 
             </div>
