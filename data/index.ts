@@ -114,7 +114,7 @@ export const projects = [
     title: "Customer Churn Prediction",
     des: "Machine learning pipeline for predicting customer churn with Flask.",
     img: "/churn.png",
-    iconLists: ["/python.svg","/pandas.svg","/Matplotlib.svg","/Jupyter.svg","/Flask.svg","/scikit-learn.svg"],
+    iconLists: ["/python.svg","/pandas.svg","/Matplotlib.svg","/Jupyter.svg","/Flask.png","/scikit-learn.svg"],
     link: "https://github.com/VelvetDragon/Churn-Analysis-and-Prediction",
   },
   {
