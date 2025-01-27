@@ -4,23 +4,12 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { SparklesCore } from "./ui/sparkles";
 
 
 const RecentProjects = () => {
   return (
 
     <div id="projects" className="py-20">
-
-      <SparklesCore
-        id="tsparticlesfullpage"
-        background="transparent"
-        minSize={0.6}
-        maxSize={1.4}
-        particleDensity={100}
-        className="w-full h-full"
-        particleColor="#FFFFFF"
-      />
 
       <TextGenerateEffect
         words="A small selection of my projects"
@@ -33,7 +22,8 @@ const RecentProjects = () => {
 
         {projects.map((item) => (
           <CardContainer className="inter-var " key={item.id}>
-            <CardBody className="relative bg-gray-50 group/card dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 lg:mt-[-5rem] border hover:shadow-lg">
+            <CardBody className="relative bg-gray-50 group/card dark:bg-transparent dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[25rem] h-full rounded-xl p-6 
+            lg:mt-[-5rem] border hover:shadow-lg">
               <CardItem
                 translateZ="50"
                 className="text-xl  font-bold text-neutral-600 dark:text-white"
