@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
 import { IoCopyOutline } from "react-icons/io5";
 import { socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
 import { TypewriterEffect } from "./ui/typewriter-effect";
-import Lottie from "react-lottie";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 import animationData from "@/data/confetti.json";
 
-
 const Footer = () => {
-
     const [copied, setCopied] = useState(false);
 
     const defaultOptions = {
@@ -18,7 +19,7 @@ const Footer = () => {
         autoplay: copied,
         animationData: animationData,
         rendererSettings: {
-        preserveAspectRatio: "xMidYMid slice",
+            preserveAspectRatio: "xMidYMid slice",
         },
     };
 
@@ -29,39 +30,22 @@ const Footer = () => {
     };
 
     const words = [
-        {
-            text: "Let's",
-            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
-        },
-        {
-            text: "turn",
-            className: "text-center  text-[10px] md:text-3xl lg:text-5xl",
-        },
-        {
-            text: "your",
-            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
-        },
-        {
-            text: "data",
-            className: "text-center text-purple text-[10px] md:text-3xl lg:text-5xl",
-        },
-        {
-            text: "into",
-            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
-        },
-        {
-            text: "action",
-            className: "text-center text-[10px] md:text-3xl lg:text-5xl",
-        },
+        { text: "Let's", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
+        { text: "turn", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
+        { text: "your", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
+        { text: "data", className: "text-center text-purple text-[10px] md:text-3xl lg:text-5xl" },
+        { text: "into", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
+        { text: "action", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
     ];
+
     return (
-        <footer className="w-full pt-20 pb-10 relative" >
+        <footer className="w-full pt-20 pb-10 relative">
             {/* background grid */}
             <div className="w-full absolute left-0 -bottom-72 min-h-96" id="contact">
                 <img
                     src="/footer-grid.svg"
                     alt="grid"
-                    className="w-full h-full opacity-50 "
+                    className="w-full h-full opacity-50"
                 />
             </div>
 
@@ -70,15 +54,8 @@ const Footer = () => {
                 <TypewriterEffect words={words} />
 
                 <div className="mt-5 relative">
-                    {/* button border magic from tailwind css buttons  */}
-                    {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-                    {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-                    {/* add handleCopy() for the copy the text */}
-                    <div
-                        className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                            }`}
-                    >
-                        {/* <img src="/confetti.gif" alt="confetti" /> */}
+                    <div className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}>
+                        {/* Conditionally render Lottie only when the animation is triggered */}
                         <Lottie options={defaultOptions} height={200} width={400} />
                     </div>
 
@@ -90,8 +67,6 @@ const Footer = () => {
                         otherClasses="!bg-[#161A31]"
                     />
                 </div>
-
-
             </div>
 
             {/* Footer Bottom Section */}
