@@ -13,7 +13,7 @@ const RecentProjects = () => {
 
       <TextGenerateEffect
         words="A small selection of my projects"
-        className="text-center text-[10px] md:text-2xl lg:text-5xl"
+        className="text-center text-[10px] sm:text-5xl md:text-5xl lg:text-6xl"
       />
       <div
         className="flex flex-wrap items-center justify-center p-6 gap-x-10 gap-y-6 mt-10"

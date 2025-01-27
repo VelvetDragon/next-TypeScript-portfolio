@@ -30,12 +30,12 @@ const Footer = () => {
     };
 
     const words = [
-        { text: "Let's", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
-        { text: "turn", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
-        { text: "your", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
-        { text: "data", className: "text-center text-purple text-[10px] md:text-3xl lg:text-5xl" },
-        { text: "into", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
-        { text: "action", className: "text-center text-[10px] md:text-3xl lg:text-5xl" },
+        { text: "Let's", className: "text-center text-[10px] sm:text-5xl md:text-5xl lg:text-5xl" },
+        { text: "turn", className: "text-center text-[10px] sm:text-5xl md:text-5xl lg:text-5xl" },
+        { text: "your", className: "text-center text-[10px] sm:text-5xl md:text-5xl lg:text-5xl" },
+        { text: "data", className: "text-center text-purple sm:text-5xl text-[10px] md:text-5xl lg:text-5xl" },
+        { text: "into", className: "text-center text-[10px] sm:text-5xl md:text-5xl lg:text-5xl" },
+        { text: "action", className: "text-center text-[10px] sm:text-5xl md:text-5xl lg:text-5xl" },
     ];
 
     return (
@@ -51,14 +51,14 @@ const Footer = () => {
                     />
                 </div>
 
-                {/* Content */}
+                
                 <div className="flex flex-col items-center">
 
                     <TypewriterEffect words={words} />
 
                     <div className="mt-5 relative">
                         <div className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}>
-                            {/* Conditionally render Lottie only when the animation is triggered */}
+                            
                             <Lottie options={defaultOptions} height={200} width={400} />
                         </div>
 
@@ -72,13 +72,13 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Footer Bottom Section */}
+                
                 <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
                     <p className="md:text-base lg:text-sm md:font-normal text-sm font-light">
                         Copyright © 2024 Suwan Aryal
                     </p>
 
-                    {/* Social Media Links */}
+                    
                     <div className="flex items-center md:gap-3 gap-6">
                         {socialMedia.map((info) => (
                             <a
