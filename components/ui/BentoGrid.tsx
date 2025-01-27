@@ -1,17 +1,10 @@
 "use client"
 import { useState } from "react";
-import { IoCopyOutline } from "react-icons/io5";
-
-
-import Lottie from "react-lottie";
-
 import { cn } from "@/lib/utils";
-
 import { BackgroundBeams } from "../ui/background-beams";
 import { BackgroundGradientAnimation } from "./GradientBg";
 
-import animationData from "@/data/confetti.json";
-import MagicButton from "./MagicButton";
+
 
 
 export const BentoGrid = ({
@@ -149,38 +142,11 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
-          {/* {id === 2 && <Boxes />} */}
+
           {id === 1 && <BackgroundBeams />}
           {id === 4 && <BackgroundBeams />}
           {id === 5 && <BackgroundBeams />}
           {id === 2 && <BackgroundBeams />}
-
-
-          {id === 6 && (
-            <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
-              >
-                <Lottie options={{
-                  loop: copied,
-                  autoplay: copied,
-                  animationData,
-                  rendererSettings: {
-                    preserveAspectRatio: 'xMidYMid slice',
-                  },
-                }} />
-              </div>
-
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
-            </div>
-          )}
         </div>
       </div>
     </div>
