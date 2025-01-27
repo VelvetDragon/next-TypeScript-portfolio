@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 import { BackgroundBeams } from "../ui/background-beams";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import { Boxes } from "../ui/background-boxes";
+
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 

@@ -1,80 +1,85 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
-
 import { projects } from "@/data";
-import { PinContainer } from "./ui/3d-pin";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20">
-      <h1 className="heading">
+    
+    <div id="projects" className="py-20">
+      <h1 className="heading text-center">
         A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        <span className="text-purple">my projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div
+        className="flex flex-wrap items-center justify-center p-6 gap-x-10 gap-y-6 mt-10"
+        suppressHydrationWarning
+      >
         {projects.map((item) => (
-          <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
-            key={item.id} 
-          >
-            <PinContainer
-              title={item.link}
-              href={item.link}
-             >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162DB" }}
+          <CardContainer className="inter-var " key={item.id}>
+            <CardBody className="relative bg-gray-50 group/card dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 lg:mt-[-5rem] border hover:shadow-lg">
+                <CardItem
+                  translateZ="50"
+                  className="text-xl  font-bold text-neutral-600 dark:text-white"
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  {item.title}
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                >
+                  {item.des}
+                </CardItem>
+                <CardItem translateZ="100" className="w-full mt-4">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  />
+                </CardItem>
+                <div className="flex justify-between items-center mt-6">
+                  <CardItem
+                    translateZ={20}
+                    translateX={-40}
+                    as="a"
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white hover:underline"
+                  >
+                    Checkout the project →
+                  </CardItem>
+                  <CardItem
+                    translateZ={20}
+                    translateX={40}
+                    as="a"
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold flex items-center gap-2"
+                  >
+                    <FaLocationArrow />
+                    Explore
+                  </CardItem>
                 </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 h-full w-full absolute bottom-0"
-                />
-              </div>
-
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {item.title}
-              </h1>
-
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
-                {item.des}
-              </p>
-
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
+                <div className="flex mt-4">
                   {item.iconLists.map((icon, index) => (
-                    <div
+                    <CardItem
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      translateZ={10 + 5 * index}
+                      className="border border-white/[.2] rounded-full bg-black w-10 h-10 flex justify-center items-center"
                       style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
+                        transform: `translateX(-${5 * index}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
+                      <img src={icon} alt={`icon-${index}`} className="p-2" />
+                    </CardItem>
                   ))}
                 </div>
-
-                <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
-                  </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
-                </div>
-              </div>
-            </PinContainer>
-          </div>
+            </CardBody>
+          </CardContainer>
         ))}
       </div>
     </div>

@@ -1,7 +1,8 @@
+import { link } from "fs";
+
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -251,10 +252,12 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link:"https://github.com/VelvetDragon"
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/insta.svg",
+    link:"https://www.instagram.com/s_.uwan/"
   },
   {
     id: 3,

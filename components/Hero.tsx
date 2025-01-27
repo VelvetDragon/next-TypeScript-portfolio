@@ -3,7 +3,9 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { Boxes } from "./ui/background-boxes";
+
+
+
 
 const Hero = () => {
     return (
@@ -22,9 +24,7 @@ const Hero = () => {
 
 
             </div>
-
-
-
+  
             <div
                 className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
                 absolute top-0 left-0 flex items-center justify-center"
@@ -47,8 +47,10 @@ const Hero = () => {
                     />
 
                     <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-                        A passionate Data Science student eager to shape the future with data.
+                        A Data Science student eager to shape the future with data.
                     </p>
+
+
 
                     <a href="https://drive.google.com/file/d/1gQ0cR1JLRG5jLmr9ZrGNmbHiCq07jjLm/view?usp=sharing" target="_blank">
                         <MagicButton
@@ -57,10 +59,12 @@ const Hero = () => {
                             position="right"
                         />
                     </a>
+
+                    
                 </div>
 
             </div>
-           
+
         </div>
     );
 };
