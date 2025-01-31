@@ -167,6 +167,6 @@ export const socialMedia = [
   {
     id: 3,
     img: "/link.svg",
-    link:"www.linkedin.com/in/suwan-aryal-2306b7349"
+    link:"www.linkedin.com/in/suwan-aryal"
   },
 ];
